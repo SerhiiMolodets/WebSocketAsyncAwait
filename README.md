@@ -1,7 +1,8 @@
 # WebSocketAsyncAwait
 
-Model samples:
+# Model samples:
 
+```
 struct Item: Codable {
     let id: UUID
     let text: String
@@ -19,9 +20,9 @@ enum OutgoingMessage: Encodable {
     case add(item: Item)
     case delete(id: UUID)
 }
-
+```
 # Usage sample
-
+```
 struct WebSocketConnectionFactoryEnvironmentKey: EnvironmentKey {
     static var defaultValue: WebSocketConnectionFactory = DefaultWebSocketConnectionFactory()
 }
@@ -41,8 +42,11 @@ struct WebSocketApp: App {
         }
     }
 }
+```
 
+# Sample View
 
+```
 struct ContentView: View {
     @Environment(\.webSocketConnectionFactory) private var webSocketConnectionFactory: WebSocketConnectionFactory
 
@@ -249,3 +253,4 @@ extension ContentView {
         }
     }
 }
+```
